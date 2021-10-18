@@ -14,8 +14,6 @@ You can get more information of the different parameters by running the script w
 
 This will display: 
 `Usage: coverageplot.R [options]
-
-
 Options:
 	-r CHARACTER, --region=CHARACTER
 		Region of the genome that you want to visualise. Can either be a region copied from Ensembl or the Ensembl gene id
