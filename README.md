@@ -47,7 +47,7 @@ This command will run the script for the genomic region of MT-RNR2 (note: I coul
 
 Opening the generated html file shows the following:
 
-https://user-images.githubusercontent.com/47054514/137713645-8617095e-d324-4564-8302-dacb759f3d9e.mov
+https://user-images.githubusercontent.com/47054514/137713881-38cd5f68-9a43-4569-944f-0f094db65355.mov
 
 You can take a look at the html file attached as an example in this repository.
 
