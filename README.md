@@ -13,7 +13,8 @@ You can get more information of the different parameters by running the script w
 `Rscript coverageplot.R -h`
 
 This will display: 
-```Usage: coverageplot.R [options]
+```
+Usage: coverageplot.R [options]
 Options:
 	-r CHARACTER, --region=CHARACTER
 		Region of the genome that you want to visualise. Can either be a region copied from Ensembl or the Ensembl gene id
@@ -31,4 +32,5 @@ Options:
 		If you want to visualise where an LNA or ASO will bind, use this argument. If multiple sequences, separate by ','.
 
 	-h, --help
-		Show this help message and exit```
+		Show this help message and exit
+```
