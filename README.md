@@ -34,3 +34,13 @@ Options:
 	-h, --help
 		Show this help message and exit
 ```
+
+The output of the script is an interactive html file showing the region of interest. 
+
+## Example
+An example of a command to start the program would be: 
+```
+Rscript --vanilla coverageplot.R -r "Chromosome MT: 1,671-3,229" -f genome.fa -g Homo_sapiens.GRCh38.91_withspikes.gtf -b RNA016611_S31_R1_001_Aligned.sortedByCoord.out.bam -l "AAGAGCACACCCGTCT,CCAACACAGGCATGCT"
+```
+
+This command will run the script for the genomic region of MT-RNR2 (note: I could also have used ENSG00000210082) starting from a BAM file (note: you can also start from a bed file, just make sure the files have the right extensions. This specific command will also display ASO sequences AAGAGCACACCCGTCT and CCAACACAGGCATGCT. The script allows no errors in the sequences and will also look for the reverse complement. 
