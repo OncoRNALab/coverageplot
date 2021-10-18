@@ -35,7 +35,7 @@ Options:
 		Show this help message and exit
 ```
 
-The output of the script is an interactive html file showing the region of interest. 
+The output of the script is an interactive html file named `region_export.html` showing the region of interest. 
 
 ## Example
 An example of a command to start the program would be: 
@@ -44,6 +44,11 @@ Rscript --vanilla coverageplot.R -r "Chromosome MT: 1,671-3,229" -f genome.fa -g
 ```
 
 This command will run the script for the genomic region of MT-RNR2 (note: I could also have used ENSG00000210082) starting from a BAM file (note: you can also start from a bed file, just make sure the files have the right extensions. This specific command will also display ASO sequences AAGAGCACACCCGTCT and CCAACACAGGCATGCT. The script allows no errors in the sequences and will also look for the reverse complement. 
+
+Opening the generated html file shows the following:
+![image](https://user-images.githubusercontent.com/47054514/137711889-b93eec11-38cf-42a6-b9f8-92ab18cf9c22.png)
+
+You can take a look at the html file attached as an example in this repository.
 
 ## Comments
 - In this script, the first five lines of the GTF file are skipped, because this is just information about the file itself. This may be different for your file. For now, either change the parameter in the script or make sure that there are five lines above the real start of the file so the script can delete them.
