@@ -46,7 +46,7 @@ Rscript --vanilla coverageplot.R -r "Chromosome MT: 1,671-3,229" -f genome.fa -g
 This command will run the script for the genomic region of MT-RNR2 (note: I could also have used ENSG00000210082) starting from a BAM file (note: you can also start from a bed file, just make sure the files have the right extensions. This specific command will also display ASO sequences AAGAGCACACCCGTCT and CCAACACAGGCATGCT. The script allows no errors in the sequences and will also look for the reverse complement. 
 
 Opening the generated html file shows the following:
-![image](https://user-images.githubusercontent.com/47054514/137711889-b93eec11-38cf-42a6-b9f8-92ab18cf9c22.png)
+https://user-images.githubusercontent.com/47054514/137713289-60e3aaf7-4264-4976-a20d-095bf4c3b286.mov
 
 You can take a look at the html file attached as an example in this repository.
 
