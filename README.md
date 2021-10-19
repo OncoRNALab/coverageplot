@@ -29,7 +29,7 @@ Options:
 		Whole genome FASTA file
 
 	-o CHARACTER, --oligo=CHARACTER
-		If you want to visualise where an LNA or ASO will bind, use this argument. If multiple sequences, separate by ','.
+		If you want to visualise where an oligonucleotide will bind, use this argument. If multiple sequences, separate by ','.
 
 	-h, --help
 		Show this help message and exit
