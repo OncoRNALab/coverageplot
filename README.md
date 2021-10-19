@@ -28,7 +28,7 @@ Options:
 	-f CHARACTER, --fasta=CHARACTER
 		Whole genome FASTA file
 
-	-l CHARACTER, --lna=CHARACTER
+	-o CHARACTER, --oligo=CHARACTER
 		If you want to visualise where an LNA or ASO will bind, use this argument. If multiple sequences, separate by ','.
 
 	-h, --help
