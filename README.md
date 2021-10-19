@@ -1,6 +1,6 @@
 # coverageplot
 
-Welcome! This script generates an interactive figure of the coverage of a specified genomic region in a way similar to IGV. You can start from a BAM file or a BED file. Additionally, you can submit LNA or ASO sequences to visualise where these oligonucleotides would bind based on sequence compelementarity. Please let me know if there are anything else you would like added to the plots or if you have other suggestions. 
+Welcome! This script generates an interactive figure of the coverage of a specified genomic region in a way similar to IGV. You can start from a BAM file or a BED file. Additionally, you can submit your blocking oligonucleotides to visualise where they would bind based on sequence compelementarity. Please let me know if there are anything else you would like added to the plots or if you have other suggestions. 
 
 ## Dependencies
 For coverageplot to work, it is important you have the following software installed:
