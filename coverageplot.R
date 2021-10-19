@@ -10,8 +10,8 @@ option_list = list(
               help="GTF file", metavar="character"),
   make_option(c("-f", "--fasta"), type="character", default=NULL, 
               help="Whole genome FASTA file", metavar="character"), 
-  make_option(c("-l", "--lna"), type="character", default=NULL, 
-              help="If you want to visualise where an LNA or ASO will bind, use this argument. If multiple sequences, separate by ','.", metavar="character")
+  make_option(c("-o", "--oligo"), type="character", default=NULL, 
+              help="If you want to visualise where an oligonucleotide will bind, use this argument. If multiple sequences, separate by ','.", metavar="character")
 ); 
 
 opt_parser = OptionParser(option_list=option_list);
@@ -34,7 +34,7 @@ gtf_clean <- gtf %>%
   mutate(gene = str_remove_all(X10, "[\";]")) 
 
 
-ggcoverage <- function(region, LNA = NULL) {
+ggcoverage <- function(region, OLIGO = NULL) {
   if (!(region %in% gtf_clean$gene) & grepl("ENSG", region)) {
     stop("proposed gene region not found")
   } else if (region %in% gtf_clean$gene) {
@@ -95,10 +95,10 @@ ggcoverage <- function(region, LNA = NULL) {
   p1 <- ggplotly(sequence_plot, tooltip = c("sequence"), dynamicTicks = TRUE)
   p2 <- ggplotly(coverage, dynamicTicks = TRUE)
   
-   if (!is.null(LNA)) {
-     LNAs <- tibble(sequence = c(LNA, toupper(spgs::reverseComplement(LNA))), 
-                    direction = rep(c("original", "revcomp"), each = length(LNA)))
-     LNA_plot <- LNAs %>%
+   if (!is.null(OLIGO)) {
+     oligos <- tibble(sequence = c(OLIGO, toupper(spgs::reverseComplement(OLIGO))), 
+                    direction = rep(c("original", "revcomp"), each = length(OLIGO)))
+     OLIGO_plot <- oligos %>%
        rowwise() %>%
        mutate(start = list(str_locate(paste(seq, collapse =""), sequence)[,"start"]), 
               end = list(str_locate(paste(seq, collapse =""), sequence)[,"end"])) %>%
@@ -116,12 +116,12 @@ ggcoverage <- function(region, LNA = NULL) {
        ylab("") +
        xlim(minimum, maximum) +
        scale_color_manual(values = c("#E69F00", "#56B4E9"))
-     p3 <- ggplotly(LNA_plot, dynamicTicks = TRUE, tooltip = c("sequence", "start", "end", "direction"))
+     p3 <- ggplotly(OLIGO_plot, dynamicTicks = TRUE, tooltip = c("sequence", "start", "end", "direction"))
      subplot(p2, p1, p3, nrows = 3, heights = c(0.90, 0.05, 0.05), shareX = TRUE)
    } else {
      subplot(p2, p1, nrows = 2, heights = c(0.95, 0.05), shareX = TRUE)
    }
 }
 
-htmlwidgets::saveWidget(ggcoverage(opt$region, unlist(strsplit(opt$lna, split = ","))), "region_export.html")
+htmlwidgets::saveWidget(ggcoverage(opt$region, unlist(strsplit(opt$oligo, split = ","))), "region_export.html")
 
